@@ -1,7 +1,18 @@
+class HotelModel {
+  
+  String name;
+  String location;
+  int distance;
+  String imageUrl;
+  int price;
+  int starReviews;
+  int reviews;
 
-import 'package:flutter_ui_samples/lib_Explore/models/hotel_model.dart';
+  HotelModel({required this.name,required this.location,required this.distance,required this.imageUrl,required this.price,required this.starReviews,required this.reviews});
 
-List<HotelModel> hotelModel = [
+}
+
+List<HotelModel> hotels = [
   HotelModel(
     name: 'Grand Royal Hotel',
     location: 'wembley, London',

@@ -1,8 +1,9 @@
 
 import 'package:flutter/material.dart';
-import 'package:flutter_ui_samples/lib_Explore/component/hotel_card.dart';
-import 'package:flutter_ui_samples/lib_Explore/repo/repo.dart';
-import 'package:flutter_ui_samples/lib_Explore/style/styles.dart';
+
+import '../../models/hotel_model.dart';
+import '../../style/styles.dart';
+import 'hotel_card.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -12,7 +13,7 @@ class HomePage extends StatelessWidget {
     return Scaffold(
         backgroundColor: Color(0xFFF6F6F6),
         appBar: AppBar(
-          backgroundColor: Color(0xFFF6F6F6),
+          backgroundColor: Colors.white,
           title: Text(
             "Explore",
             style: style2,
@@ -21,12 +22,12 @@ class HomePage extends StatelessWidget {
           elevation: 0,
           actions: [
             Icon(
-              Icons.favorite_border, 
+              Icons.favorite_border,
               size: 35,
-            ), 
+            ),
             SizedBox(width: 5,),
             Icon(
-              Icons.location_on, 
+              Icons.location_on,
               size: 35,
             )
           ],
@@ -34,18 +35,17 @@ class HomePage extends StatelessWidget {
         body: Column(
           children: [
             Padding(
-              padding: EdgeInsets.all(10),
+              padding: EdgeInsets.symmetric(horizontal: 10, vertical: 20),
               child: Row(
                 children: [
                   Expanded(
                     child: Container(
                       decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(20),  
-                                       
+                        borderRadius: BorderRadius.circular(30),
                         color: Colors.white,
                       ),
                       child: Padding(
-                        padding: const EdgeInsets.all(10),
+                        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
                         child: Text(
                           'London',
                           style: style1,
@@ -53,10 +53,10 @@ class HomePage extends StatelessWidget {
                       ),
                     )
                   ),
-                  sizeW1,
+                  sizedBoxW10,
                   Container(
-                    height: 40,
-                    width: 40,
+                    height: 50,
+                    width: 50,
                     decoration: BoxDecoration(
                       boxShadow: [
                         BoxShadow(
@@ -64,13 +64,12 @@ class HomePage extends StatelessWidget {
                           blurRadius: 5,
                           color: Colors.grey
                         )
-                        
                         ],
-                      borderRadius: BorderRadius.circular(20),
+                      borderRadius: BorderRadius.circular(30),
                       color: Color(0xFF56D4C5),
                     ),
                     child: Icon(
-                      Icons.search, 
+                      Icons.search,
                       color: Colors.white,
                     ),
                   ),
@@ -78,7 +77,7 @@ class HomePage extends StatelessWidget {
               ),
             ),
             Padding(
-              padding: EdgeInsets.only(top:10, right: 10, left: 10, bottom: 16),
+              padding: EdgeInsets.only(right: 15, left: 15, bottom: 16),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -86,35 +85,36 @@ class HomePage extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        'Choose date', 
+                        'Choose date',
                         style: style3
                       ),
+                      sizedBoxH5,
                       Text(
-                        '12 Dec - 22 Dec', 
+                        '12 Dec - 22 Dec',
                         style: style1
                       ),
                     ],
                   ),
-                  sizeW2,
+                  sizedBoxW35,
                   SizedBox(
-                    height: 50, 
+                    height: 50,
                     child: VerticalDivider()
                   ),
-              
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        'number of room', 
+                        'Number of Room',
                         style: style3
                       ),
+                      sizedBoxH5,
                       Text(
-                        '1 Room - 2 Adults', 
+                        '1 Room - 2 Adults',
                         style: style1
                       ),
                     ],
                   ),
-                  sizeW2,
+                  sizedBoxW35,
 
                 ],
               ),
@@ -125,7 +125,7 @@ class HomePage extends StatelessWidget {
                 child: Column(
                   children: [
                     Padding(
-                      padding: EdgeInsets.only(top: 16, right: 16, left: 16),
+                      padding: EdgeInsets.only(top: 5, right: 16, left: 16),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
@@ -133,14 +133,14 @@ class HomePage extends StatelessWidget {
                           Row(
                             children: [
                               Text(
-                                'Filter', 
+                                'Filters',
                                 style: style1,
                               ),
-                              sizeH1,
+                              sizedBoxH10,
                               IconButton(
                                 onPressed: (){},
                                 icon: Icon(
-                                  Icons.sort, 
+                                  Icons.sort,
                                   size: 30,
                                 ),
                                 color: Color(0xFF56D4C5),
@@ -152,11 +152,11 @@ class HomePage extends StatelessWidget {
                     ),
                     Flexible(
                       child: Padding(
-                        padding: const EdgeInsets.symmetric( horizontal: 10, vertical: 8 ),
+                        padding: const EdgeInsets.symmetric(horizontal: 10),
                         child: ListView.builder(
-                            itemCount: hotelModel.length,
+                            itemCount: hotels.length,
                             itemBuilder: (context, index) {
-                              return HotelCard(hotelModel[index]);
+                              return hotelCard(hotel: hotels[index]);
                             },
                         ),
                       ),
