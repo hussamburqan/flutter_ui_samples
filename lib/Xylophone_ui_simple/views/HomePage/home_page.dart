@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_ui_samples/Xylophone_ui_simple/style/style.dart';
 import 'package:just_audio/just_audio.dart';
 
 class HomePage extends StatelessWidget {
@@ -50,7 +51,7 @@ class MusicCard extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
               Icon(Icons.circle, color: Colors.white70),
-              SizedBox(width: 200,),
+              sizedBoxW200,
               Icon(Icons.circle, color: Colors.white70),
             ],
           ),
