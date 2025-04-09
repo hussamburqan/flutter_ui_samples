@@ -25,7 +25,7 @@ class HomePage extends StatelessWidget {
               Icons.favorite_border,
               size: 35,
             ),
-            SizedBox(width: 5,),
+            sizedBoxW5,
             Icon(
               Icons.location_on,
               size: 35,
@@ -34,6 +34,7 @@ class HomePage extends StatelessWidget {
         ),
         body: Column(
           children: [
+
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 10, vertical: 20),
               child: Row(
@@ -76,6 +77,7 @@ class HomePage extends StatelessWidget {
                 ],
               ),
             ),
+
             Padding(
               padding: EdgeInsets.only(right: 15, left: 15, bottom: 16),
               child: Row(
@@ -115,10 +117,10 @@ class HomePage extends StatelessWidget {
                     ],
                   ),
                   sizedBoxW35,
-
                 ],
               ),
             ),
+
             Expanded(
               child: Container(
                 color: Colors.white,
@@ -150,13 +152,14 @@ class HomePage extends StatelessWidget {
                         ],
                       ),
                     ),
+
                     Flexible(
                       child: Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 10),
                         child: ListView.builder(
                             itemCount: hotels.length,
                             itemBuilder: (context, index) {
-                              return hotelCard(hotel: hotels[index]);
+                              return HotelCard(hotel: hotels[index]);
                             },
                         ),
                       ),

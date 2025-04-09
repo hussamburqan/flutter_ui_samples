@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_ui_samples/hotel_ui_sample/views/HomePage/homepage.dart';
+import 'package:flutter_ui_samples/hotel_ui_sample/views/HomePage/home_page.dart';
 
 class MyAppExplore extends StatelessWidget {
   const MyAppExplore({super.key});

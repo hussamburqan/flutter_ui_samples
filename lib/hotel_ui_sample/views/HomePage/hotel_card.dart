@@ -2,13 +2,14 @@ import 'package:flutter/material.dart';
 import '../../models/hotel_model.dart';
 import '../../style/styles.dart';
 
-class hotelCard extends StatelessWidget {
+class HotelCard extends StatelessWidget {
   final HotelModel hotel;
 
-  const hotelCard({super.key, required this.hotel});
+  const HotelCard({super.key, required this.hotel});
 
   @override
   Widget build(BuildContext context) {
+
     return Padding(
       padding: const EdgeInsets.only(top: 8, bottom: 12, right: 8,left: 8),
       child: Container(
@@ -26,8 +27,10 @@ class hotelCard extends StatelessWidget {
         height: 300,
         child: Column(
           children: [
+
             Stack(
               children: [
+
                 Positioned(
                   child: Column(
                     children: [
@@ -44,87 +47,88 @@ class hotelCard extends StatelessWidget {
                           ),
                         ),
                       ),
-                      Padding(
-                        padding: const EdgeInsets.symmetric(
-                          vertical: 5,
-                          horizontal: 15,
-                        ),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-
-                          children: [
-                            Text(hotel.name, style: style2),
-                            Text("\$${hotel.price}", style: style2),
-                          ],
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.symmetric(
-                          vertical: 5,
-                          horizontal: 15,
-                        ),
-                        child: Row(
-                          children: [
-                            Text('${hotel.location}', style: style3),
-                            sizedBoxW5,
-                            Icon(
-                              Icons.location_on,
-                              color: Color(0xFF56D4C5),
-                              size: 20,
-                            ),
-                            Text("${hotel.distance} to city center", style: style3),
-                            Expanded(child: SizedBox()),
-                            Text("/per night", style: style4),
-                          ],
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.symmetric(
-                          vertical: 5,
-                          horizontal: 15,
-                        ),
-                        child: Row(
-                          children: [
-                            Icon(
-                              hotel.starReviews >= 1
-                                  ? Icons.star
-                                  : Icons.star_border,
-                              color: Color(0xFF56D4C5),
-                            ),
-                            Icon(
-                              hotel.starReviews >= 2
-                                  ? Icons.star
-                                  : Icons.star_border,
-                              color: Color(0xFF56D4C5),
-                            ),
-                            Icon(
-                              hotel.starReviews >= 3
-                                  ? Icons.star
-                                  : Icons.star_border,
-                              color: Color(0xFF56D4C5),
-                            ),
-                            Icon(
-                              hotel.starReviews >= 4
-                                  ? Icons.star
-                                  : Icons.star_border,
-                              color: Color(0xFF56D4C5),
-                            ),
-                            Icon(
-                              hotel.starReviews == 5
-                                  ? Icons.star
-                                  : Icons.star_border,
-                              color: Color(0xFF56D4C5),
-                            ),
-                            sizedBoxW5,
-                            Text('${hotel.reviews} Reviews', style: style3,),
-                          ],
-                        ),
-                      ),
                     ],
                   ),
                 ),
                 favoriteButton(),
               ],
+            ),
+
+            Padding(
+              padding: const EdgeInsets.symmetric(
+                vertical: 5,
+                horizontal: 15,
+              ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+
+                children: [
+                  Text(hotel.name, style: style2),
+                  Text("\$${hotel.price}", style: style2),
+                ],
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(
+                vertical: 5,
+                horizontal: 15,
+              ),
+              child: Row(
+                children: [
+                  Text('${hotel.location}', style: style3),
+                  sizedBoxW5,
+                  Icon(
+                    Icons.location_on,
+                    color: Color(0xFF56D4C5),
+                    size: 20,
+                  ),
+                  Text("${hotel.distance} to city center", style: style3),
+                  Expanded(child: SizedBox()),
+                  Text("/per night", style: style4),
+                ],
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(
+                vertical: 5,
+                horizontal: 15,
+              ),
+              child: Row(
+                children: [
+                  Icon(
+                    hotel.starReviews >= 1
+                        ? Icons.star
+                        : Icons.star_border,
+                    color: Color(0xFF56D4C5),
+                  ),
+                  Icon(
+                    hotel.starReviews >= 2
+                        ? Icons.star
+                        : Icons.star_border,
+                    color: Color(0xFF56D4C5),
+                  ),
+                  Icon(
+                    hotel.starReviews >= 3
+                        ? Icons.star
+                        : Icons.star_border,
+                    color: Color(0xFF56D4C5),
+                  ),
+                  Icon(
+                    hotel.starReviews >= 4
+                        ? Icons.star
+                        : Icons.star_border,
+                    color: Color(0xFF56D4C5),
+                  ),
+                  Icon(
+                    hotel.starReviews == 5
+                        ? Icons.star
+                        : Icons.star_border,
+                    color: Color(0xFF56D4C5),
+                  ),
+                  sizedBoxW5,
+                  Text('${hotel.reviews} Reviews', style: style3,),
+                ],
+              ),
             ),
           ],
         ),
@@ -132,7 +136,6 @@ class hotelCard extends StatelessWidget {
     );
   }
 }
-
 
 class favoriteButton extends StatefulWidget {
   const favoriteButton({super.key});
@@ -143,6 +146,7 @@ class favoriteButton extends StatefulWidget {
 
 class _favoriteButtonState extends State<favoriteButton> {
   bool isFavorite = false;
+
   @override
   Widget build(BuildContext context) {
     return  Positioned(
