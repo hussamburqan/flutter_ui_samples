@@ -51,7 +51,7 @@ class MusicCard extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
               Icon(Icons.circle, color: Colors.white70),
-              sizedBoxW200,
+              sizedBoxW20,
               Icon(Icons.circle, color: Colors.white70),
             ],
           ),

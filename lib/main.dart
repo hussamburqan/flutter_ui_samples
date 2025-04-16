@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_ui_samples/Xylophone_ui_simple/main_Xylophone.dart';
+import 'fitness_magazine_ui_sample/main_fitness_magazine.dart';
+import 'hotel_ui_sample/main_explore.dart';
 
 void main() {
-  runApp(const MyAppXylophone());
+  runApp(const MyAppExplore());
 }
