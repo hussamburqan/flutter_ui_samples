@@ -82,7 +82,9 @@ flutter:
   assets:
     - assets/hotel/
     - assets/Xylophone/audio/
-    - assets/icons/png/placeholder.png
+    - assets/icons/
+    - assets/Fitness/
+
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images
 

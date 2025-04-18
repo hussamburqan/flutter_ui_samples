@@ -17,63 +17,70 @@ class Advice {
 
 }
 
-
-
-
-
 List<Advice> nutrition = [
   Advice(
-    title: 'المسموحات الممنوعات في رمضان', 
-    description: 'kdjfkjsdk kjsldjkfjk ajklkjl fjkdjfkk kjsldjkfjk ajklkjl fjkdjfkk kjsldjkfjk ajklkjl fjkdjfkk kjsldjkfjk ajklkjl fjkdjfkk kjsldjkfjk ajklkjl fjkdjfkk kjsldjkfjk ajklkjl fjkdjfkk kjsldjkfjk ajklkjl fjkdjfkk kjsldjkfjk ajklkjl fjkdjfkk kjsldjkfjk ajklkjl fjkdjfkk kjsldjkfjk ajklkjl fjkdjfkk kjsldjkfjk ajklkjl fjkdjfkk kjsldjkfjk ajklkjl fjkdjfkk kjsldjkfjk ajklkjl fjkdjfkk kjsldjkfjk ajklkjl fjkdjfkk kjsldjkfjk ajklkjl fjkdjfkk kjsldjkfjk ajklkjl fjkdjfkk kjsldjkfjk ajklkjl fjkdjfkk kjsldjkfjk ajklkjl fjkdjfkk kjsldjkfjk ajklkjl fjkdjfkk kjsldjkfjk ajklkjl fjkdjfkk kjsldjkfjk ajklkjl fjkdjfkk kjsldjkfjk ajklkjl fjkdjfkk kjsldjkfjk ajklkjl fjkdjfkk kjsldjkfjk ajklkjl fjkdjfkk kjsldjkfjk ajklkjl fjkdjfkk kjsldjkfjk ajklkjl fjkdjfkk kjsldjkfjk ajklkjl fjkdjfkk kjsldjkfjk ajklkjl fjkdjfkk kjsldjkfjk ajklkjl fjkdjfkk kjsldjkfjk ajklkjl fjkdjfkk kjsldjkfjk ajklkjl fjkdjfkk kjsldjkfjk ajklkjl fjkdjfkk kjsldjkfjk ajklkjl fjkdjfkk kjsldjkfjk ajklkjl fjkdjfkk kjsldjkfjk ajklkjl fjkdjfkk kjsldjkfjk ajklkjl fjkdjfkk kjsldjkfjk ajklkjl fjkdjfkk kjsldjkfjk ajklkjl fjkdjfkjsdk kjsldjkfjk ajklkjl fjkdjfkjsdk kjsldjkfjk ajklkjl fjkdjfkjsdk kjsldjkfjk ajklkjl fjkdjfkjsdk kjsldjkfjk ajklkjl fjkdjfkjsdk kjsldjkfjk ajklkjl fjkdjfkjsdk kjsldjkfjk ajklkjl fjkdjfkjsdk kjsldjkfjk ajklkjl fjkdjfkjsdk kjsldjkfjk ajklkjl fjkdjfkjsdk kjsldjkfjk ajklkjl fjkdjfkjsdk kjsldjkfjk ajklkjl fjkdjfkjsdk kjsldjkfjk ajklkjl fjkdjfkjsdk kjsldjkfjk ajklkjl fjkdjfkjsdk kjsldjkfjk ajklkjl fjkdjfkjsdk kjsldjkfjk ajklkjl fjkdjfkjsdk kjsldjkfjk ajklkjl fjkdjfkjsdk kjsldjkfjk ajklkjl fjkdjfkjsdk kjsldjkfjk ajklkjl fjkdjfkjsdk kjsldjkfjk ajklkjl fjkdjfkjsdk kjsldjkfjk ajklkjl fjkdjfkjsdk kjsldjkfjk ajklkjl fjkdjfkjsdk kjsldjkfjk ajklkjl fjkdjfkjsdk kjsldjkfjk ajklkjl fjkdjfkjsdk kjsldjkfjk ajklkjl fjkdjfkjsdk kjsldjkfjk ajklkjl fjkdjfkjsdk kjsldjkfjk ajklkjl fjkdjfkjsdk kjsldjkfjk ajklkjl fjkdjfkjsdk kjsldjkfjk ajklkjl fjkdjfkjsdk kjsldjkfjk ajklkjl fjk ajk ak afkja fdjk fdjk jkf jkfl jklf jk jlkkjlfjkaf fakj afkjl afkj fkj afkjl akfjl afkjl kafl kfl akfl afk fdkkj dfkla fklfk fdk fk fkjl kl kjlskl aklsdfjkl',
-    imageUrl: 'assets/icons/png/placeholder.png',
-    color: Color(0xFfB4cf66)
+    title: 'أهمية تناول الألياف',
+    description: '''
+تناول الألياف يلعب دورًا مهمًا في تحسين صحة الجهاز الهضمي وتقليل خطر الإصابة بالإمساك. توجد الألياف بكثرة في الخضروات، الفواكه، الحبوب الكاملة، والبقوليات. 
+
+الألياف تساهم أيضاً في الشعور بالشبع لفترات أطول، مما يساعد في التحكم بالوزن. تناول كمية كافية منها يساعد في تنظيم مستوى السكر في الدم وتقليل الكوليسترول، مما يساهم في الوقاية من أمراض القلب والسكري من النوع الثاني.
+
+ابدأ يومك بوجبة فطور تحتوي على الشوفان أو خبز القمح الكامل، ولا تنس شرب كمية كافية من الماء ليساعد الألياف على العمل بفعالية.
+''',
+    imageUrl: 'assets/Fitness/fibers.jpg',
+    color: Color(0xFfB4cf66),
   ),
   Advice(
-    title: 'فوائد تناول وجبة السحور', 
-    description: 'description', 
-    imageUrl: 'assets/icons/png/placeholder.png',
-    color: Color(0xFfB4cf66)
+    title: 'توازن الوجبات اليومية',
+    description: '''
+التوازن في تناول الطعام يعني دمج البروتينات، الكربوهيدرات، والدهون الصحية في كل وجبة. يساعد ذلك في توفير طاقة مستدامة للجسم وتحسين الأداء الذهني والجسدي.
 
+تناول وجبة تحتوي على الخضروات الملونة، مصدر بروتين مثل البيض أو العدس، وبعض الدهون الصحية مثل زيت الزيتون أو المكسرات. التوازن لا يعني الحرمان، بل الاعتدال في الكمية والاختيار الذكي.
+
+تجنب تناول الوجبات السريعة بانتظام، واحرص على تحضير وجباتك في المنزل لضمان الجودة الغذائية.
+''',
+    imageUrl: 'assets/Fitness/images.jfif',
+    color: Color(0xFfB4cf66),
   ),
   Advice(
-    title: 'ماهو البيض', 
-    description: 'description', 
-    imageUrl: 'assets/icons/png/placeholder.png',
-    color: Color(0xFfB4cf66)
-
+    title: 'ما هو البيض؟',
+    description: 'البيض مصدر غني بالبروتين عالي الجودة، ويحتوي على العديد من الفيتامينات والمعادن مثل فيتامين B12 والحديد. يعد من الأطعمة الكاملة التي يمكن تضمينها في وجبات الفطور أو العشاء. البيض أيضاً مفيد لصحة العيون والدماغ، ويمكن تحضيره بطرق صحية مثل السلق أو الطهي بالبخار.',
+    imageUrl: 'assets/Fitness/egg.jpg',
+    color: Color(0xFfB4cf66),
   ),
 ];
 
+
 List<Advice> health = [
   Advice(
-    title: 'تناول البروكلي ', 
-    description: 'انه شيء جيد ', 
-    imageUrl: 'assets/icons/png/placeholder.png',
-    color: Color(0xFF79bde8)
+    title: 'تناول البروكلي',
+    description: 'البروكلي من الخضروات الغنية بمضادات الأكسدة والفيتامينات مثل فيتامين C و K. يساعد في تقوية جهاز المناعة، تحسين صحة القلب، والوقاية من السرطان. يمكن تناوله مطهواً على البخار أو في السلطات. يُعتبر غذاءً ممتازاً للأطفال والبالغين بفضل قيمته الغذائية العالية.',
+    imageUrl: 'assets/Fitness/prokley.jpg',
+    color: Color(0xFF79bde8),
   ),
-   Advice(
-    title: 'شرب ٨ أكواب من الماء يطيل العمر', 
-    description: 'description', 
-    imageUrl: 'assets/icons/png/placeholder.png',
-    color: Color(0xFF79bde8)
-
+  Advice(
+    title: 'شرب ٨ أكواب من الماء يطيل العمر',
+    description: 'شرب الماء بانتظام يعزز وظائف الأعضاء، يحافظ على توازن السوائل، ويخلص الجسم من السموم. الحفاظ على ترطيب الجسم يقلل من خطر الإصابة بالأمراض المزمنة ويحسّن من المزاج والتركيز. ينصح بشرب ما لا يقل عن ٨ أكواب يومياً، ويزداد الاحتياج في الطقس الحار أو عند ممارسة التمارين.',
+    imageUrl: 'assets/Fitness/watter.jpeg',
+    color: Color(0xFF79bde8),
   ),
 ];
 
 List<Advice> beauty = [
   Advice(
-    title: 'كثرة الاستحمام تضر بشرة الاطفال', 
-    description: 'description', 
-    imageUrl: 'assets/icons/png/placeholder.png',
-    color: Color(0xFFf05e8e) 
+    title: 'كثرة الاستحمام تضر بشرة الأطفال',
+    description: 'الاستحمام المتكرر للأطفال، خاصة بالماء الساخن والصابون القوي، يمكن أن يزيل الزيوت الطبيعية من الجلد ويسبب الجفاف أو التهيج. يُنصح باستخدام صابون خفيف وماء فاتر، وتحديد عدد مرات الاستحمام إلى مرتين أو ثلاث أسبوعياً ما لم يكن الطفل متسخاً أو متعرقاً.',
+    imageUrl: 'assets/Fitness/baby.jpg',
+    color: Color(0xFFf05e8e),
   ),
 ];
 
+
 List<Advice> fitness = [
   Advice(
-    title: 'ما الذاكرة العضلية .. وكيف تزيدها', 
-    description: 'description', 
-    imageUrl: 'assets/icons/png/placeholder.png',
-    color: Color(0xFFfccd0a)
+    title: 'ما الذاكرة العضلية .. وكيف تزيدها',
+    description: 'الذاكرة العضلية هي قدرة الجسم على تذكر الحركات والأنشطة البدنية التي تم تعلمها مسبقاً، حتى بعد التوقف لفترة عن ممارستها. تنشأ هذه الذاكرة من خلال التكرار والتدريب المنتظم، حيث يتم ترسيخ الأوامر الحركية في الدماغ والأعصاب المرتبطة بالعضلات. من أمثلتها: قيادة الدراجة، العزف على آلة موسيقية، أو أداء تمرين رياضي معين بشكل تلقائي.\n\nلزيادة الذاكرة العضلية، يُنصح بالتمارين المنتظمة مع التركيز على الدقة والتكرار. كذلك، تقسيم التمارين إلى مراحل صغيرة وإتقان كل جزء منها يساعد على تعزيز الاستجابة العصبية وتحسين الأداء على المدى الطويل. النوم الجيد والتغذية المتوازنة لهما دور كبير أيضاً في ترسيخ المهارات الحركية داخل الدماغ والجهاز العضلي.',
+    imageUrl: 'assets/Fitness/muscles.jpg',
+    color: Color(0xFFfccd0a),
   ),
 ];
