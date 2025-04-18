@@ -30,7 +30,8 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-
+  flutter_localizations:
+    sdk: flutter
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.8
@@ -81,7 +82,7 @@ flutter:
   assets:
     - assets/hotel/
     - assets/Xylophone/audio/
-
+    - assets/icons/png/placeholder.png
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images
 
@@ -105,6 +106,11 @@ flutter:
         - asset: assets/fonts/WorkSans-Medium.ttf
         - asset: assets/fonts/WorkSans-Regular.ttf
         - asset: assets/fonts/WorkSans-SemiBold.ttf
+    - family: Somar
+      fonts:
+        - asset: assets/fonts/Somar-Black.otf
+        - asset: assets/fonts/Somar-Bold.otf
+        - asset: assets/fonts/Somar-Regular.otf
 
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/to/font-from-package
