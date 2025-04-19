@@ -1,16 +1,14 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_ui_samples/fitness_magazine_ui_sample/models/health_magazine.dart';
 import '../style/text_box.dart';
 import '../style/text_style.dart';
 
 class FitnessMagazineDetailsPage extends StatelessWidget {
 
-  final String title;
-  final String description;
-  final String imageUrl;
-  final String imageId;
+  final HealthMagazine magazine;
 
-  FitnessMagazineDetailsPage({super.key, required this.title, required this.description, required this.imageUrl, required this.imageId});
+  FitnessMagazineDetailsPage({super.key, required this.magazine});
 
   @override
   Widget build(BuildContext context) {
@@ -23,9 +21,9 @@ class FitnessMagazineDetailsPage extends StatelessWidget {
             child: Stack(
               children: [
                 Hero(
-                  tag: imageId,
+                  tag: magazine.category,
                   child: CachedNetworkImage(
-                    imageUrl: imageUrl,
+                    imageUrl: magazine.imageUrl,
                     width: double.infinity,
                     height: 320,
                     fit: BoxFit.cover
@@ -39,13 +37,13 @@ class FitnessMagazineDetailsPage extends StatelessWidget {
                     Navigator.of(context).pop();
                   }, icon: Icon(Icons.arrow_back, size: 30,color: Colors.white,))
                 ),
+                
                 Positioned(
                   top: 280,
                   left: 0,
                   right: 0,
                   bottom: 0,
                   child: Container(
-
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.only(
                       topLeft: Radius.circular(20),
@@ -58,12 +56,25 @@ class FitnessMagazineDetailsPage extends StatelessWidget {
                         children: [
                           sizedBoxH10,
                           Padding(
-                            padding: const EdgeInsets.all(10),
-                            child: Text(title, style: titleStyle2,),
+                            padding: const EdgeInsets.only(left: 20,right: 20),
+                            child: Text(magazine.title, style: titleStyle2,),
+                          ),
+                          Row(
+                            children: [
+                            GestureDetector(
+                              onTap: () {
+                                
+                              },
+                              child: Padding(
+                                padding: const EdgeInsets.only(left: 20,right: 20,top: 10),
+                                child: Text(magazine.editor, style: titleStyle2,),
+                              ),
+                            ),
+                            ],
                           ),
                           Padding(
-                            padding: const EdgeInsets.all(10),
-                            child: Text(description, style: desStyle2,),
+                            padding: const EdgeInsets.all(20),
+                            child: Text(magazine.content, style: desStyle2,),
                           ),
                         ],
                       ),

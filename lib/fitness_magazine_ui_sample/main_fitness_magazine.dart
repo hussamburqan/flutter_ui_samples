@@ -28,7 +28,4 @@ class FitnessMagazineApp extends StatelessWidget{
       home: FitnessMagazineHomePage(),
     );
   }
-
-
-
 }
