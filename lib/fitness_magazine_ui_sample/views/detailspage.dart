@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import '../style/text_box.dart';
 import '../style/text_style.dart';
@@ -7,8 +8,9 @@ class FitnessMagazineDetailsPage extends StatelessWidget {
   final String title;
   final String description;
   final String imageUrl;
+  final String imageId;
 
-  FitnessMagazineDetailsPage({super.key, required this.title, required this.description, required this.imageUrl});
+  FitnessMagazineDetailsPage({super.key, required this.title, required this.description, required this.imageUrl, required this.imageId});
 
   @override
   Widget build(BuildContext context) {
@@ -20,11 +22,14 @@ class FitnessMagazineDetailsPage extends StatelessWidget {
           Expanded(
             child: Stack(
               children: [
-                Image.asset(
-                  imageUrl,
-                  width: double.infinity,
-                  height: 320,
-                  fit: BoxFit.cover
+                Hero(
+                  tag: imageId,
+                  child: CachedNetworkImage(
+                    imageUrl: imageUrl,
+                    width: double.infinity,
+                    height: 320,
+                    fit: BoxFit.cover
+                  ),
                 ),
             
                 Positioned(

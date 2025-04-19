@@ -102,7 +102,7 @@ List<HealthMagazine> magazines = [
 وفي الختام
 إن تناول الأطعمة الجيدة لتعزيز جهاز المناعة يساعد أيضًا في الحفاظ على الوظائف والعمليات الأساسية في الجسم. من الجيد دائمًا تضمين واحد أو أكثر من الأطعمة التي تعزز المناعة في النظام الغذائي بانتظام للحفاظ على صحة جيدة ومنع الأمراض التي تسببها مسببات الأمراض، بدلاً من تناولها فقط عند الإصابة بالمرض.
   ''',
-    imageUrl: 'assets/Fitness/foods.jfif',
+    imageUrl: 'https://images.unsplash.com/photo-1592545287571-8afd34aada57?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     category: 'تغذية',
     color: Color(0xFFB4CD66),
   ),
@@ -145,7 +145,7 @@ List<HealthMagazine> magazines = [
     الخلاصة:
     النوم ليس مجرد راحة، بل هو عملية حيوية تؤثر على كل جانب من جوانب صحتنا الجسدية والعقلية. للحصول على أقصى فوائد من النوم، من المهم الحفاظ على روتين نوم صحي ومريح. فالنوم الجيد ليس رفاهية، بل هو ضرورة للحفاظ على صحة الجسم والعقل.
     ''',
-      imageUrl: 'assets/Fitness/sleep.jpeg',
+    imageUrl: 'https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?q=80&w=2660&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
       category: 'صحة',
       color: Color(0xFF78BCE6),
   ),
@@ -172,7 +172,7 @@ List<HealthMagazine> magazines = [
 
 الزنجبيل يعد من أبرز العلاجات الطبيعية التي تجمع بين الفوائد الجمالية والصحية، ويعد إضافة مثالية لنظامك الغذائي اليومي. 
 ''',
-    imageUrl: 'assets/Fitness/ginger.webp',
+    imageUrl: 'https://cdn.salla.sa/oqYdG/mC5HfFUOk6oxbWV4JdVWf2hpnLsHqWpYhqAJMyKP.png',
     category: 'جمال',
     color: Color(0xFFf05e8e),
   ),
@@ -216,7 +216,7 @@ List<HealthMagazine> magazines = [
     الخلاصة:
     اللياقة البدنية هي أكثر من مجرد مظهر جسماني. إنها جزء أساسي من نمط الحياة الصحي الذي يساهم في تحسين الصحة العامة وتقليل خطر الإصابة بالأمراض. بالمواظبة على التمارين الرياضية وتبني عادات غذائية صحية، يمكن للفرد أن يحقق أفضل مستويات اللياقة البدنية ويعيش حياة أطول وأكثر صحة.
     ''',
-      imageUrl: 'assets/Fitness/sports.webp',
+    imageUrl: 'https://images.unsplash.com/photo-1599058917212-d750089bc07e?q=80&w=2669&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
       category: 'لياقة',
       color: Color(0xFFFBCB09),
   ),
