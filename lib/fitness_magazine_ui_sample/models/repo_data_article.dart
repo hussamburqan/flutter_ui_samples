@@ -1,28 +1,9 @@
 
-class HealthMagazine {
-  
-  String title;
-  String content;
-  String imageUrl;
-  String category;
-  String editor;
-  String source;
+import 'article_model.dart';
 
+List<Article> firstArticles = [
 
-  HealthMagazine({
-    required this.title, 
-    required this.content, 
-    required this.imageUrl, 
-    required this.category,
-    required this.editor,
-    required this.source
-    });
-    
-}
-
-List<HealthMagazine> magazines = [
-
-  HealthMagazine(
+  Article(
     title: 'أطعمة تعزز جهاز المناعة',
     content: '''جهاز المناعة مسؤول بالكامل عن حماية أجسامنا من العدوى والأمراض المختلفة، وبالتالي الحفاظ على صحتنا. وهو يتكون من أعضاء وغدد وأنسجة مختلفة وحتى خلايا وبروتينات معينة. تقوم هذه العناصر معًا بتنفيذ وظائف جسدية تساعد في مكافحة مسببات الأمراض المسببة للعدوى، مثل البكتيريا والفيروسات والأجسام الغريبة الأخرى.
 
@@ -107,12 +88,12 @@ List<HealthMagazine> magazines = [
     imageUrl: 'https://images.unsplash.com/photo-1592545287571-8afd34aada57?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     category: 'تغذية',
     source: 'http://google.com',
-    editor: 'sadfsadfsdaf',
+    editor: '',
   ),
 
-  HealthMagazine(
-      title: 'أهمية النوم',
-      content:   '''
+  Article(
+    title: 'أهمية النوم',
+    content:   '''
     النوم هو أحد الأساسيات التي لا غنى عنها للحفاظ على صحة الجسم والعقل. إنه ليس مجرد فترة من الراحة التي يحتاجها الجسم للراحة، بل هو عملية معقدة وحيوية تلعب دورًا رئيسيًا في تعزيز جهاز المناعة، وتجديد الخلايا، وتنظيم الهرمونات، وتحسين الذاكرة والتركيز. يمكن أن يؤثر نقص النوم على جميع جوانب حياتنا، من الحالة المزاجية إلى الأداء البدني والعقلي، وصولاً إلى الصحة الجسدية طويلة المدى.
 
     العملية الفسيولوجية للنوم:
@@ -149,11 +130,11 @@ List<HealthMagazine> magazines = [
     النوم ليس مجرد راحة، بل هو عملية حيوية تؤثر على كل جانب من جوانب صحتنا الجسدية والعقلية. للحصول على أقصى فوائد من النوم، من المهم الحفاظ على روتين نوم صحي ومريح. فالنوم الجيد ليس رفاهية، بل هو ضرورة للحفاظ على صحة الجسم والعقل.
     ''',
     imageUrl: 'https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?q=80&w=2660&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-      category: 'صحة',
-      editor: '',
-      source: '',
+    category: 'صحة',
+    editor: '',
+    source: '',
   ),
-  HealthMagazine(
+  Article(
     title: 'فوائد الزنجبيل للشعر والجسم',
     content: '''الزنجبيل هو أحد التوابل الطبيعية التي تتمتع بفوائد صحية مذهلة للجسم والشعر. يحتوي الزنجبيل على مجموعة من العناصر الغذائية المهمة مثل الفيتامينات (C، B6)، والمعادن (البوتاسيوم، المغنيسيوم)، ومضادات الأكسدة التي تحسن الصحة العامة وتساهم في تعزيز نمو الشعر وتحسين جودته. يملك الزنجبيل خصائص مضادة للالتهابات والبكتيريا التي تساهم في تعزيز المناعة والوقاية من الأمراض. 
 
@@ -182,9 +163,9 @@ List<HealthMagazine> magazines = [
     source: '',
   ),
 
-  HealthMagazine(
-      title: 'أهمية اللياقة البدنية',
-      content:   '''
+  Article(
+    title: 'أهمية اللياقة البدنية',
+    content:   '''
     اللياقة البدنية هي حالة من الصحة العامة التي تعتمد على قدرة الجسم على القيام بالأنشطة البدنية اليومية دون الشعور بالإرهاق. تعد اللياقة البدنية أحد العوامل الرئيسية التي تؤثر بشكل كبير على الصحة الجسدية والعقلية. من خلال اتباع نظام رياضي متوازن، يمكن للفرد أن يحسن من قدرته على التحمل، ويقلل من خطر الإصابة بالأمراض المزمنة، ويزيد من مستويات الطاقة.
 
     أهمية اللياقة البدنية:
@@ -222,9 +203,9 @@ List<HealthMagazine> magazines = [
     اللياقة البدنية هي أكثر من مجرد مظهر جسماني. إنها جزء أساسي من نمط الحياة الصحي الذي يساهم في تحسين الصحة العامة وتقليل خطر الإصابة بالأمراض. بالمواظبة على التمارين الرياضية وتبني عادات غذائية صحية، يمكن للفرد أن يحقق أفضل مستويات اللياقة البدنية ويعيش حياة أطول وأكثر صحة.
     ''',
     imageUrl: 'https://images.unsplash.com/photo-1599058917212-d750089bc07e?q=80&w=2669&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-      category: 'لياقة',
-      editor: '',
-      source: '',
+    category: 'لياقة',
+    editor: '',
+    source: '',
   ),
 
 
@@ -232,8 +213,8 @@ List<HealthMagazine> magazines = [
 ];
 
 
-List<HealthMagazine> nutrition = [
-  HealthMagazine(
+List<Article> articleNutrition = [
+  Article(
     source: '',
     editor: '',
     category: 'تغذية',
@@ -247,7 +228,7 @@ List<HealthMagazine> nutrition = [
 ''',
     imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCeHw7JGbqqXNCCO6-FhpVD4bkMtmUGH3WJw&s',
   ),
-  HealthMagazine(
+  Article(
     source: '',
     editor: '',
     category: 'تغذية',
@@ -261,7 +242,7 @@ List<HealthMagazine> nutrition = [
 ''',
     imageUrl: 'https://www.clevelandclinicabudhabi.ae/health-byte/-/media/images/health-byte/article-image/boost-your-immunity-with-the-foods-you-eat/boost-your-immunity-with-the-foods-you-eat-lg.png?h=514&w=877&la=ar-AE&hash=77DCD880C9B1BEE0E5944F8B3AE426BA',
   ),
-  HealthMagazine(
+  Article(
     editor: '',
     source: '',
     category: 'تغذية',
@@ -272,8 +253,8 @@ List<HealthMagazine> nutrition = [
 ];
 
 
-List<HealthMagazine> health = [
-  HealthMagazine(
+List<Article> articleHealth = [
+  Article(
     category: 'صحة',
     editor: '',
     source: '',
@@ -281,7 +262,7 @@ List<HealthMagazine> health = [
     content: 'البروكلي من الخضروات الغنية بمضادات الأكسدة والفيتامينات مثل فيتامين C و K. يساعد في تقوية جهاز المناعة، تحسين صحة القلب، والوقاية من السرطان. يمكن تناوله مطهواً على البخار أو في السلطات. يُعتبر غذاءً ممتازاً للأطفال والبالغين بفضل قيمته الغذائية العالية.',
     imageUrl: 'https://cdn.salla.sa/XRVjV/5a865824-63ed-454c-9968-1614b72fde1c-1000x1000-oOvM4ZbVGdjhZckiYYX2kbD1i0prGGqxwQKvMEML.png',
   ),
-  HealthMagazine(
+  Article(
     source: '',
     editor: '',
     category: 'صحة',
@@ -291,8 +272,8 @@ List<HealthMagazine> health = [
   ),
 ];
 
-List<HealthMagazine> beauty = [
-  HealthMagazine(
+List<Article> articleBeauty = [
+  Article(
     source: 'http://google.com',
     editor: 'sadfsadfsdaf',
     category: 'جمال',
@@ -303,8 +284,8 @@ List<HealthMagazine> beauty = [
 ];
 
 
-List<HealthMagazine> fitness = [
-  HealthMagazine(
+List<Article> articleFitness = [
+  Article(
     source: '',
     editor: '',
     category: 'لياقة',
