@@ -1,14 +1,13 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_ui_samples/fitness_magazine_ui_sample/models/health_magazine.dart';
+
+import 'package:flutter_ui_samples/fitness_magazine_ui_sample/models/article_model.dart';
 import '../style/text_box.dart';
 import '../style/text_style.dart';
 
 class FitnessMagazineDetailsPage extends StatelessWidget {
-
-  final HealthMagazine magazine;
-
-  FitnessMagazineDetailsPage({super.key, required this.magazine});
+  const FitnessMagazineDetailsPage({super.key, required this.article});
+  final Article article;
 
   @override
   Widget build(BuildContext context) {
@@ -21,9 +20,9 @@ class FitnessMagazineDetailsPage extends StatelessWidget {
             child: Stack(
               children: [
                 Hero(
-                  tag: magazine.category,
+                  tag: article.category,
                   child: CachedNetworkImage(
-                    imageUrl: magazine.imageUrl,
+                    imageUrl: article.imageUrl,
                     width: double.infinity,
                     height: 320,
                     fit: BoxFit.cover
@@ -43,7 +42,7 @@ class FitnessMagazineDetailsPage extends StatelessWidget {
                   left: 0,
                   right: 0,
                   bottom: 0,
-                  child: Container(
+                  child: DecoratedBox(
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.only(
                       topLeft: Radius.circular(20),
@@ -57,7 +56,7 @@ class FitnessMagazineDetailsPage extends StatelessWidget {
                           sizedBoxH10,
                           Padding(
                             padding: const EdgeInsets.only(left: 20,right: 20),
-                            child: Text(magazine.title, style: titleStyle2,),
+                            child: Text(article.title, style: titleStyle2,),
                           ),
                           Row(
                             children: [
@@ -67,14 +66,14 @@ class FitnessMagazineDetailsPage extends StatelessWidget {
                               },
                               child: Padding(
                                 padding: const EdgeInsets.only(left: 20,right: 20,top: 10),
-                                child: Text(magazine.editor, style: titleStyle2,),
+                                child: Text(article.editor, style: titleStyle2,),
                               ),
                             ),
                             ],
                           ),
                           Padding(
                             padding: const EdgeInsets.all(20),
-                            child: Text(magazine.content, style: desStyle2,),
+                            child: Text(article.content, style: desStyle2,),
                           ),
                         ],
                       ),

@@ -1,7 +1,8 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_ui_samples/fitness_magazine_ui_sample/utilities/colormap.dart';
-import '../models/health_magazine.dart';
+import '../models/article_model.dart';
+import '../models/repo_data_article.dart';
 import '../style/text_box.dart';
 import '../style/text_style.dart';
 import 'detailspage.dart';
@@ -22,53 +23,46 @@ class FitnessMagazineHomePage extends StatelessWidget {
           ),
         body: Column(
           children: [
-            Container(
-              height: 330,
+            SizedBox(
+              height: 310,
               child: ListView.builder(
                 scrollDirection: Axis.horizontal,
-                itemCount: magazines.length,
+                itemCount: firstArticles.length,
                 itemBuilder: (context, index) {
-                  return HealthMagazineCard(id: '${magazines[index].category}$index', magazine: magazines[index],);
+                  return FirstSectionCard(id: '${firstArticles[index].category}$index', article: firstArticles[index],);
                 }
               ),
             ),
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: TabBar(
-                labelColor: Color.fromARGB(255, 12, 91, 0),
-                labelStyle: nameStyle,
-                unselectedLabelColor: Colors.white,
-                indicatorWeight: 3,
-                labelPadding: EdgeInsets.all(10),
-                dividerColor: Colors.transparent,
-                indicatorColor: Color(0xFF48444D),
-                tabs: [
-                  MyTab(category: 'تغذية',),
-                  MyTab(category: 'صحة',),
-                  MyTab(category: 'جمال',),
-                  MyTab(category: 'لياقة',),
+                  indicatorWeight: 3,
+                  tabs: [
+                  CustomTab(category: 'تغذية',),
+                  CustomTab(category: 'صحة',),
+                  CustomTab(category: 'جمال',),
+                  CustomTab(category: 'لياقة',),
                 ]
               ),
             ),
             Expanded(
               child: TabBarView(children: [
-                BuilderAdviceCard(advices: nutrition,),
-                BuilderAdviceCard(advices: health,),
-                BuilderAdviceCard(advices: beauty,),
-                BuilderAdviceCard(advices: fitness,),
+                CategoryArticlesList(articles: articleNutrition,),
+                CategoryArticlesList(articles: articleHealth,),
+                CategoryArticlesList(articles: articleBeauty,),
+                CategoryArticlesList(articles: articleFitness,),
               ]),
             ),
           ]
         ),
       ),
-    ); 
+    );
   }
 }
 
-class MyTab extends StatelessWidget {
+class CustomTab extends StatelessWidget {
+  const CustomTab({super.key, required this.category});
   final String category;
-  MyTab({super.key, required this.category});
-
 
   @override
   Widget build(BuildContext context) {
@@ -81,46 +75,41 @@ class MyTab extends StatelessWidget {
           padding: const EdgeInsets.all(8.0),
           child: Text(category),
         ),
-      
+
     );
   }
 
 
 }
 
-class BuilderAdviceCard extends StatelessWidget {
-  final List<HealthMagazine> advices;
-  BuilderAdviceCard({super.key, required this.advices});
+class CategoryArticlesList  extends StatelessWidget {
+  const CategoryArticlesList({super.key, required this.articles});
+  final List<Article> articles;
 
   @override Widget build(BuildContext context) {
     return ListView.builder(
-      itemCount: advices.length,
+      itemCount: articles.length,
       itemBuilder: (context, index) {
-        return AdviceCard(id: '${advices[index].title}$index', magazine: advices[index],);
+        return ArticleListCard(
+          id: '${articles[index].title}$index',
+          article: articles[index],
+        );
       }
     );
   }
 
 }
-class AdviceCard extends StatelessWidget {
-  final HealthMagazine magazine;
+class ArticleListCard extends StatelessWidget {
+  const ArticleListCard({super.key, required this.article, required this.id});
+  final Article article;
   final String id;
-  AdviceCard({super.key, required this.magazine, required this.id});
 
   @override
   Widget build(BuildContext context){
-    return Hero(
-      tag: id,
-      child: Padding(
+    return Padding(
         padding: const EdgeInsets.all(8.0),
-        child: GestureDetector(
-          onTap: () {
-            Navigator.of(context).push(MaterialPageRoute(builder: (contxt){
-              return FitnessMagazineDetailsPage(magazine: magazine,);
-            }));
-          },
-          child: Card(
-            color: getCategoryColor(magazine.category),
+        child: Card(
+            color: getCategoryColor(article.category),
             elevation: 8,
             child: Container(
               height: 120,
@@ -131,30 +120,41 @@ class AdviceCard extends StatelessWidget {
                     borderRadius: BorderRadius.only(topRight: Radius.circular(10), bottomRight: Radius.circular(10)),
                     child: Container(
                       width: 130,
-                      child: CachedNetworkImage(
-                        placeholder: (context, url) => Center(
-                          child: Image.asset('assets/icons/png/placeholder.png',
-                          fit: BoxFit.cover,
-                          height: double.infinity,
-                          width: double.infinity,
-                          ),
-                          
+                      child: Hero(
+                        tag: id,
+                        child: GestureDetector(
+                          onTap: () {
+                            Navigator.of(context).push(MaterialPageRoute(builder: (contxt){
+                              return FitnessMagazineDetailsPage(article: article,);
+                            }));
+                          },
+                          child: CachedNetworkImage(
+                            placeholder: (context, url) => Center(
+                              child: Image.asset('assets/icons/png/placeholder.png',
+                              fit: BoxFit.cover,
+                              height: double.infinity,
+                              width: double.infinity,
+                              ),
+                            ),
+                            errorWidget: (context, url, error) => Center(
+                              child: Image.asset('assets/icons/png/error.png',
+                              fit: BoxFit.cover,
+                              height: double.infinity,
+                              width: double.infinity,
+                              ),
+
+                            ),
+                            height: double.infinity,
+                            width: double.infinity,
+                            imageUrl: article.imageUrl,
+                            fit: BoxFit.cover,
+                            ),
                         ),
-                        errorWidget: (context, url, error) => Center(
-                          child: Image.asset('assets/icons/png/error.png',
-                          fit: BoxFit.cover,
-                          height: double.infinity,
-                          width: double.infinity,
-                          ),
-                          
-                        ),
-                        height: double.infinity,
-                        width: double.infinity,
-                        imageUrl: magazine.imageUrl,
-                        fit: BoxFit.cover,
-                        ),
+                      ),
                     ),
                   ),
+
+
                   Expanded(
                     child: Padding(
                       padding: const EdgeInsets.all(10),
@@ -162,17 +162,35 @@ class AdviceCard extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.spaceAround,
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                             Text(magazine.title, style: desStyle3,),
-                             Text(magazine.content, maxLines: 2, overflow: TextOverflow.ellipsis, style: desStyle3,),
+                             Text(article.title, style: desStyle3,),
+                             Text(article.content, maxLines: 2, overflow: TextOverflow.ellipsis, style: desStyle3,),
                              sizedBoxH10,
                              Row(
+                               mainAxisAlignment: MainAxisAlignment.end,
                                children: [
-                                Spacer(),
-                                Icon(Icons.share, color: Colors.white,),
-                                sizedBoxW5,
-                                Icon(Icons.favorite_border, color: Colors.white,),
-                                sizedBoxW5,
-                                Icon(Icons.remove_red_eye, color: Colors.white,),
+                                 CustomIcon(
+                                   size: 25,
+                                   enableColor: Color(0xFF4A4A4A),
+                                   unEnableColor: Colors.white54,
+                                   enableIcon: Icons.share,
+                                   unEnableIcon: Icons.share_outlined,
+                                 ),
+                                 sizedBoxW5,
+                                 CustomIcon(
+                                   size: 25,
+                                   enableColor: Color(0xFFEE5C8D),
+                                   unEnableColor: Colors.white54,
+                                   enableIcon: Icons.favorite,
+                                   unEnableIcon: Icons.favorite_border,
+                                 ),
+                                 sizedBoxW5,
+                                 CustomIcon(
+                                   size: 25,
+                                   enableColor: Color(0xFF4A4A4A),
+                                   unEnableColor: Colors.white54,
+                                   enableIcon: Icons.remove_red_eye,
+                                   unEnableIcon: Icons.remove_red_eye_outlined,
+                                 ),
                                ],
                              ),
                           ],
@@ -183,102 +201,124 @@ class AdviceCard extends StatelessWidget {
               ),
             ),
           ),
-        ),
-      ),
     );
   }
 }
 
-class HealthMagazineCard extends StatelessWidget{
-  final HealthMagazine magazine ;
+class FirstSectionCard extends StatelessWidget{
+  const FirstSectionCard({super.key, required this.article, required this.id});
+  final Article article ;
   final String id;
-  HealthMagazineCard({super.key, required this.magazine, required this.id});
 
   @override
   Widget build(BuildContext context) {
-    return Hero(
-        
-        tag: id,
-        child: Padding(
+    return Padding(
           padding: const EdgeInsets.all(8.0),
-          child: GestureDetector(
-            onTap: (){
-               Navigator.of(context).push(MaterialPageRoute(builder: (contxt){
-                return FitnessMagazineDetailsPage(magazine: magazine,);
-              }));
-            },
-            child: Container(
+          child: SizedBox(
               width: 320,
-              decoration: BoxDecoration(
-                color: Colors.white,
-              ),
               child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   ClipRRect(
                     borderRadius: BorderRadius.circular(10),
                     child: Stack(
                       children: [
-                        CachedNetworkImage(
-                          fit: BoxFit.fitWidth,
-                          height: 170,
-                          width: double.infinity,
-                          imageUrl: magazine.imageUrl,
-                          placeholder: (context, url) => Center(
-                          child: Image.asset('assets/icons/png/placeholder.png',
-                          fit: BoxFit.cover,
-                          height: double.infinity,
-                          width: double.infinity,
+                        Hero(
+                          tag: id,
+                          child: GestureDetector(
+                              onTap: () {
+                                Navigator.of(context).push(MaterialPageRoute(builder: (contxt){
+                                  return FitnessMagazineDetailsPage(article: article,);
+                                }));
+                              },
+                            child: CachedNetworkImage(
+                              fit: BoxFit.fitWidth,
+                              height: 170,
+                              width: double.infinity,
+                              imageUrl: article.imageUrl,
+                              placeholder: (context, url) => Center(
+                                child: Image.asset('assets/icons/png/placeholder.png',
+                                  fit: BoxFit.cover,
+                                  height: double.infinity,
+                                  width: double.infinity,
+                                  ),
+                              ),
+                              errorWidget: (context, url, error) => Center(
+                                child: Image.asset('assets/icons/png/error.png',
+                                fit: BoxFit.cover,
+                                height: double.infinity,
+                                width: double.infinity,
+                                ),
+                              ),
+                            ),
                           ),
-                        ),
-                          errorWidget: (context, url, error) => Center(
-                          child: Image.asset('assets/icons/png/error.png',
-                          fit: BoxFit.cover,
-                          height: double.infinity,
-                          width: double.infinity,
-                          ),
-                        ),
                         ),
                         Positioned(
                           top: 10,
                           left: 10,
-                          child: Icon(Icons.favorite_border,size: 30, color: Colors.white,))
+                          child: CustomIcon(
+                            size: 30,
+                            enableColor: Color(0xFFFF0000),
+                            unEnableColor: Colors.white,
+                            enableIcon: Icons.favorite,
+                            unEnableIcon: Icons.favorite_border,
+                          ),
+                        )
                       ],
                     ),
                   ),
-                  Align(
-                    alignment: Alignment.centerRight,
-                    child: Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Container(
-                        color: getCategoryColor(magazine.category),
-                        child: Padding(
-                          padding: const EdgeInsets.only(top: 4, bottom: 4, left: 16, right: 16),
-                        child: Text(magazine.category, style: titleStyle1,),
-                      )),
+                  Padding(
+                    padding: const EdgeInsets.only(top: 8, bottom: 8),
+                    child: ColoredBox(
+                      color: getCategoryColor(article.category),
+                      child: Padding(
+                        padding: const EdgeInsets.only(top: 4, bottom: 4, left: 16, right: 16),
+                      child: Text(article.category, style: titleStyle1,),
+                      )
                     ),
                   ),
-                  Align(
-                    alignment: Alignment.centerRight,
-                    child: Padding(
-                      padding: const EdgeInsets.only(left: 8, right: 8),
-                      child: Text(magazine.title, style: nameStyle),
-                    )
-                  ),
-                  Align(
-                    alignment: Alignment.centerRight,
-                    child: Padding(
-                      padding: const EdgeInsets.only(left: 8, right: 8),
-                      child: Text(magazine.content, overflow: TextOverflow.ellipsis, maxLines: 2, style: desStyle1),
-                    )
-                  ),
+                  Text(article.title, style: nameStyle),
+                  Text(article.content, overflow: TextOverflow.ellipsis, maxLines: 2, style: desStyle1),
                 ],
               ),
             ),
-          ),
-        ),
     );
   }
 }
 
+class CustomIcon extends StatefulWidget {
+  const CustomIcon({super.key, required this.enableIcon, required this.unEnableIcon, required this.enableColor, required this.unEnableColor, required this.size});
+  final double size;
+  final IconData enableIcon;
+  final IconData unEnableIcon;
+  final Color enableColor;
+  final Color unEnableColor;
 
+  @override
+  State<CustomIcon> createState() => _CustomIconState();
+}
 
+class _CustomIconState extends State<CustomIcon> {
+  bool isEnable = false;
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: () {
+        setState(() {
+          isEnable = !isEnable;
+        });
+      },
+        child: Icon(
+            (isEnable
+                ? widget.enableIcon
+                : widget.unEnableIcon
+            ),
+            size: widget.size,
+            color: isEnable
+                ? widget.enableColor
+                : widget.unEnableColor
+        ),
+    );
+  }
+}
