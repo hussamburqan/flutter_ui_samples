@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-
-import 'fitness_magazine_ui_sample/main_fitness_magazine.dart';
+import 'package:flutter_ui_samples/filter_sample/filter_app.dart';
 
 void main() {
-  runApp(FitnessMagazineApp());
+  runApp(MyAppFilter());
 }

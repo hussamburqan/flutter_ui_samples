@@ -114,6 +114,9 @@ flutter:
         - asset: assets/fitness_assets_app/fonts/Somar-Black.otf
         - asset: assets/fitness_assets_app/fonts/Somar-Bold.otf
         - asset: assets/fitness_assets_app/fonts/Somar-Regular.otf
+    - family: Kula
+      fonts:
+        - asset: assets/filter_assets/fonts/Kula-Bold.otf
 
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/to/font-from-package
