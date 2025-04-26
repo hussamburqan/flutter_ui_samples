@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_ui_samples/Xylophone_ui_simple/style/style.dart';
 import 'package:just_audio/just_audio.dart';
+
+import 'package:flutter_ui_samples/Xylophone_ui_simple/style/style.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -12,17 +13,17 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Color(0xFF567F98),
         centerTitle: true ,
-        title: Text('Xylophone',style: TextStyle(color: Color(0xFFA6C5E2)),),
+        title: Text('Xylophone_assets_app',style: TextStyle(color: Color(0xFFA6C5E2)),),
       ),
       body: Column(
         children: [
-          MusicCard(color: Colors.red, path: 'assets/Xylophone/audio/note1.wav',),
-          MusicCard(color: Colors.orange, path: 'assets/Xylophone/audio/note2.wav'),
-          MusicCard(color: Colors.yellow, path: 'assets/Xylophone/audio/note3.wav'),
-          MusicCard(color: Colors.green, path: 'assets/Xylophone/audio/note4.wav'),
-          MusicCard(color: Colors.blue, path: 'assets/Xylophone/audio/note5.wav'),
-          MusicCard(color: Colors.purple, path: 'assets/Xylophone/audio/note6.wav'),
-          MusicCard(color: Colors.pink, path: 'assets/Xylophone/audio/note7.wav'),
+          MusicCard(color: Colors.red, path: 'assets/Xylophone_assets_app/audio/note1.wav',),
+          MusicCard(color: Colors.orange, path: 'assets/Xylophone_assets_app/audio/note2.wav'),
+          MusicCard(color: Colors.yellow, path: 'assets/Xylophone_assets_app/audio/note3.wav'),
+          MusicCard(color: Colors.green, path: 'assets/Xylophone_assets_app/audio/note4.wav'),
+          MusicCard(color: Colors.blue, path: 'assets/Xylophone_assets_app/audio/note5.wav'),
+          MusicCard(color: Colors.purple, path: 'assets/Xylophone_assets_app/audio/note6.wav'),
+          MusicCard(color: Colors.pink, path: 'assets/Xylophone_assets_app/audio/note7.wav'),
         ],
       ),
     );
