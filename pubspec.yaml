@@ -117,6 +117,10 @@ flutter:
     - family: Kula
       fonts:
         - asset: assets/filter_assets/fonts/Kula-Bold.otf
+    - family: Alkes
+      fonts:
+        - asset: assets/subscriptions_assets/fonts/AlkesBlack.TTF
+        - asset: assets/subscriptions_assets/fonts/AlkesBold.TTF
 
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/to/font-from-package
