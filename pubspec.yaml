@@ -30,15 +30,11 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  flutter_localizations:
-    sdk: flutter
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.8
   just_audio: ^0.9.46
   flutter_launcher_icons: ^0.14.3
-  cached_network_image: ^3.4.1
-  url_launcher: any
 
 dev_dependencies:
   flutter_test:
@@ -82,10 +78,7 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-    - assets/hotel_assets_app/
     - assets/Xylophone_assets_app/audio/
-    - assets/icons/png/
-    - assets/fitness_assets_app/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images
@@ -99,22 +92,6 @@ flutter:
   # list giving the asset and other descriptors for the font. For
   # example:
   fonts:
-    - family: Roboto
-      fonts:
-        - asset: assets/hotel_assets_app/fonts/Roboto-Bold.ttf
-        - asset: assets/hotel_assets_app/fonts/Roboto-Medium.ttf
-        - asset: assets/hotel_assets_app/fonts/Roboto-Regular.ttf
-    - family: WorkSans
-      fonts:
-        - asset: assets/hotel_assets_app/fonts/WorkSans-Bold.ttf
-        - asset: assets/hotel_assets_app/fonts/WorkSans-Medium.ttf
-        - asset: assets/hotel_assets_app/fonts/WorkSans-Regular.ttf
-        - asset: assets/hotel_assets_app/fonts/WorkSans-SemiBold.ttf
-    - family: Somar
-      fonts:
-        - asset: assets/fitness_assets_app/fonts/Somar-Black.otf
-        - asset: assets/fitness_assets_app/fonts/Somar-Bold.otf
-        - asset: assets/fitness_assets_app/fonts/Somar-Regular.otf
     - family: Kula
       fonts:
         - asset: assets/filter_assets/fonts/Kula-Bold.otf

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:just_audio/just_audio.dart';
 
-import 'package:flutter_ui_samples/Xylophone_ui_simple/style/style.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -61,3 +60,5 @@ class MusicCard extends StatelessWidget {
     );
   }
 }
+
+const SizedBox sizedBoxW20 = SizedBox(width: 10);
