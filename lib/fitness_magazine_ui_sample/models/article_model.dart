@@ -5,7 +5,6 @@ class Article {
   String content;
   String imageUrl;
   String category;
-  String editor;
   String source;
 
 
@@ -14,7 +13,6 @@ class Article {
     required this.content, 
     required this.imageUrl, 
     required this.category,
-    required this.editor,
     required this.source
     });
     

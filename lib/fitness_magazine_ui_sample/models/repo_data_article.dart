@@ -88,7 +88,6 @@ List<Article> firstArticles = [
     imageUrl: 'https://images.unsplash.com/photo-1592545287571-8afd34aada57?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     category: 'تغذية',
     source: 'http://google.com',
-    editor: '',
   ),
 
   Article(
@@ -131,7 +130,6 @@ List<Article> firstArticles = [
     ''',
     imageUrl: 'https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?q=80&w=2660&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     category: 'صحة',
-    editor: '',
     source: '',
   ),
   Article(
@@ -159,7 +157,6 @@ List<Article> firstArticles = [
 ''',
     imageUrl: 'https://cdn.salla.sa/oqYdG/mC5HfFUOk6oxbWV4JdVWf2hpnLsHqWpYhqAJMyKP.png',
     category: 'جمال',
-    editor: '',
     source: '',
   ),
 
@@ -204,7 +201,6 @@ List<Article> firstArticles = [
     ''',
     imageUrl: 'https://images.unsplash.com/photo-1599058917212-d750089bc07e?q=80&w=2669&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     category: 'لياقة',
-    editor: '',
     source: '',
   ),
 
@@ -216,7 +212,6 @@ List<Article> firstArticles = [
 List<Article> articleNutrition = [
   Article(
     source: '',
-    editor: '',
     category: 'تغذية',
     title: 'أهمية تناول الألياف',
     content: '''
@@ -230,7 +225,6 @@ List<Article> articleNutrition = [
   ),
   Article(
     source: '',
-    editor: '',
     category: 'تغذية',
     title: 'توازن الوجبات اليومية',
     content: '''
@@ -243,7 +237,6 @@ List<Article> articleNutrition = [
     imageUrl: 'https://www.clevelandclinicabudhabi.ae/health-byte/-/media/images/health-byte/article-image/boost-your-immunity-with-the-foods-you-eat/boost-your-immunity-with-the-foods-you-eat-lg.png?h=514&w=877&la=ar-AE&hash=77DCD880C9B1BEE0E5944F8B3AE426BA',
   ),
   Article(
-    editor: '',
     source: '',
     category: 'تغذية',
     title: 'ما هو البيض؟',
@@ -256,7 +249,6 @@ List<Article> articleNutrition = [
 List<Article> articleHealth = [
   Article(
     category: 'صحة',
-    editor: '',
     source: '',
     title: 'تناول البروكلي',
     content: 'البروكلي من الخضروات الغنية بمضادات الأكسدة والفيتامينات مثل فيتامين C و K. يساعد في تقوية جهاز المناعة، تحسين صحة القلب، والوقاية من السرطان. يمكن تناوله مطهواً على البخار أو في السلطات. يُعتبر غذاءً ممتازاً للأطفال والبالغين بفضل قيمته الغذائية العالية.',
@@ -264,7 +256,6 @@ List<Article> articleHealth = [
   ),
   Article(
     source: '',
-    editor: '',
     category: 'صحة',
     title: 'شرب ٨ أكواب من الماء يطيل العمر',
     content: 'شرب الماء بانتظام يعزز وظائف الأعضاء، يحافظ على توازن السوائل، ويخلص الجسم من السموم. الحفاظ على ترطيب الجسم يقلل من خطر الإصابة بالأمراض المزمنة ويحسّن من المزاج والتركيز. ينصح بشرب ما لا يقل عن ٨ أكواب يومياً، ويزداد الاحتياج في الطقس الحار أو عند ممارسة التمارين.',
@@ -275,7 +266,6 @@ List<Article> articleHealth = [
 List<Article> articleBeauty = [
   Article(
     source: 'http://google.com',
-    editor: 'sadfsadfsdaf',
     category: 'جمال',
     title: 'كثرة الاستحمام تضر بشرة الأطفال',
     content: 'الاستحمام المتكرر للأطفال، خاصة بالماء الساخن والصابون القوي، يمكن أن يزيل الزيوت الطبيعية من الجلد ويسبب الجفاف أو التهيج. يُنصح باستخدام صابون خفيف وماء فاتر، وتحديد عدد مرات الاستحمام إلى مرتين أو ثلاث أسبوعياً ما لم يكن الطفل متسخاً أو متعرقاً.',
@@ -287,7 +277,6 @@ List<Article> articleBeauty = [
 List<Article> articleFitness = [
   Article(
     source: '',
-    editor: '',
     category: 'لياقة',
     title: 'ما الذاكرة العضلية .. وكيف تزيدها',
     content: 'الذاكرة العضلية هي قدرة الجسم على تذكر الحركات والأنشطة البدنية التي تم تعلمها مسبقاً، حتى بعد التوقف لفترة عن ممارستها. تنشأ هذه الذاكرة من خلال التكرار والتدريب المنتظم، حيث يتم ترسيخ الأوامر الحركية في الدماغ والأعصاب المرتبطة بالعضلات. من أمثلتها: قيادة الدراجة، العزف على آلة موسيقية، أو أداء تمرين رياضي معين بشكل تلقائي.\n\nلزيادة الذاكرة العضلية، يُنصح بالتمارين المنتظمة مع التركيز على الدقة والتكرار. كذلك، تقسيم التمارين إلى مراحل صغيرة وإتقان كل جزء منها يساعد على تعزيز الاستجابة العصبية وتحسين الأداء على المدى الطويل. النوم الجيد والتغذية المتوازنة لهما دور كبير أيضاً في ترسيخ المهارات الحركية داخل الدماغ والجهاز العضلي.',

@@ -108,26 +108,26 @@ class ArticleListCard extends StatelessWidget {
   Widget build(BuildContext context){
     return Padding(
         padding: const EdgeInsets.all(8.0),
-        child: Card(
-            color: getCategoryColor(article.category),
-            elevation: 8,
-            child: Container(
-              height: 120,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: [
-                  ClipRRect(
-                    borderRadius: BorderRadius.only(topRight: Radius.circular(10), bottomRight: Radius.circular(10)),
-                    child: Container(
-                      width: 130,
-                      child: Hero(
-                        tag: id,
-                        child: GestureDetector(
-                          onTap: () {
-                            Navigator.of(context).push(MaterialPageRoute(builder: (contxt){
-                              return FitnessMagazineDetailsPage(article: article,);
-                            }));
-                          },
+        child: Hero(
+          tag: id,
+          child: GestureDetector(
+            onTap: () {
+              Navigator.of(context).push(MaterialPageRoute(builder: (contxt){
+                return FitnessMagazineDetailsPage(article: article, id: id);
+              }));
+            },
+            child: Card(
+                color: getCategoryColor(article.category),
+                elevation: 8,
+                child: Container(
+                  height: 120,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      ClipRRect(
+                        borderRadius: BorderRadius.only(topRight: Radius.circular(10), bottomRight: Radius.circular(10)),
+                        child: Container(
+                          width: 130,
                           child: CachedNetworkImage(
                             placeholder: (context, url) => Center(
                               child: Image.asset('assets/icons/png/placeholder.png',
@@ -151,56 +151,54 @@ class ArticleListCard extends StatelessWidget {
                             ),
                         ),
                       ),
-                    ),
-                  ),
-
-
-                  Expanded(
-                    child: Padding(
-                      padding: const EdgeInsets.all(10),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.spaceAround,
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                             Text(article.title, style: desStyle3,),
-                             Text(article.content, maxLines: 2, overflow: TextOverflow.ellipsis, style: desStyle3,),
-                             sizedBoxH10,
-                             Row(
-                               mainAxisAlignment: MainAxisAlignment.end,
-                               children: [
-                                 CustomIcon(
-                                   size: 25,
-                                   enableColor: Color(0xFF4A4A4A),
-                                   unEnableColor: Colors.white54,
-                                   enableIcon: Icons.share,
-                                   unEnableIcon: Icons.share_outlined,
+                      Expanded(
+                        child: Padding(
+                          padding: const EdgeInsets.all(10),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.spaceAround,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                 Text(article.title, style: desStyle3,),
+                                 Text(article.content, maxLines: 2, overflow: TextOverflow.ellipsis, style: desStyle3,),
+                                 sizedBoxH10,
+                                 Row(
+                                   mainAxisAlignment: MainAxisAlignment.end,
+                                   children: [
+                                     CustomIcon(
+                                       size: 25,
+                                       enableColor: Color(0xFF4A4A4A),
+                                       unEnableColor: Colors.white54,
+                                       enableIcon: Icons.share,
+                                       unEnableIcon: Icons.share_outlined,
+                                     ),
+                                     sizedBoxW5,
+                                     CustomIcon(
+                                       size: 25,
+                                       enableColor: Color(0xFFEE5C8D),
+                                       unEnableColor: Colors.white54,
+                                       enableIcon: Icons.favorite,
+                                       unEnableIcon: Icons.favorite_border,
+                                     ),
+                                     sizedBoxW5,
+                                     CustomIcon(
+                                       size: 25,
+                                       enableColor: Color(0xFF4A4A4A),
+                                       unEnableColor: Colors.white54,
+                                       enableIcon: Icons.remove_red_eye,
+                                       unEnableIcon: Icons.remove_red_eye_outlined,
+                                     ),
+                                   ],
                                  ),
-                                 sizedBoxW5,
-                                 CustomIcon(
-                                   size: 25,
-                                   enableColor: Color(0xFFEE5C8D),
-                                   unEnableColor: Colors.white54,
-                                   enableIcon: Icons.favorite,
-                                   unEnableIcon: Icons.favorite_border,
-                                 ),
-                                 sizedBoxW5,
-                                 CustomIcon(
-                                   size: 25,
-                                   enableColor: Color(0xFF4A4A4A),
-                                   unEnableColor: Colors.white54,
-                                   enableIcon: Icons.remove_red_eye,
-                                   unEnableIcon: Icons.remove_red_eye_outlined,
-                                 ),
-                               ],
-                             ),
-                          ],
-                        ),
+                              ],
+                            ),
+                          ),
                       ),
+                    ],
                   ),
-                ],
+                ),
               ),
-            ),
           ),
+        ),
     );
   }
 }
@@ -214,74 +212,77 @@ class FirstSectionCard extends StatelessWidget{
   Widget build(BuildContext context) {
     return Padding(
           padding: const EdgeInsets.all(8.0),
-          child: SizedBox(
-              width: 320,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  ClipRRect(
-                    borderRadius: BorderRadius.circular(10),
-                    child: Stack(
+          child: Hero(
+            tag: id,
+            child: Material(
+              color: Colors.white,
+              child: GestureDetector(
+                onTap: () {
+                  Navigator.of(context).push(MaterialPageRoute(builder: (contxt){
+                    return FitnessMagazineDetailsPage(article: article, id: id);
+                  }));
+                },
+                child: SizedBox(
+                    width: 320,
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Hero(
-                          tag: id,
-                          child: GestureDetector(
-                              onTap: () {
-                                Navigator.of(context).push(MaterialPageRoute(builder: (contxt){
-                                  return FitnessMagazineDetailsPage(article: article,);
-                                }));
-                              },
-                            child: CachedNetworkImage(
-                              fit: BoxFit.fitWidth,
-                              height: 170,
-                              width: double.infinity,
-                              imageUrl: article.imageUrl,
-                              placeholder: (context, url) => Center(
-                                child: Image.asset('assets/icons/png/placeholder.png',
+                        ClipRRect(
+                          borderRadius: BorderRadius.circular(10),
+                          child: Stack(
+                            children: [
+                               CachedNetworkImage(
+                                fit: BoxFit.fitWidth,
+                                height: 170,
+                                width: double.infinity,
+                                imageUrl: article.imageUrl,
+                                placeholder: (context, url) => Center(
+                                  child: Image.asset('assets/icons/png/placeholder.png',
+                                    fit: BoxFit.cover,
+                                    height: double.infinity,
+                                    width: double.infinity,
+                                    ),
+                                ),
+                                errorWidget: (context, url, error) => Center(
+                                  child: Image.asset('assets/icons/png/error.png',
                                   fit: BoxFit.cover,
                                   height: double.infinity,
                                   width: double.infinity,
                                   ),
-                              ),
-                              errorWidget: (context, url, error) => Center(
-                                child: Image.asset('assets/icons/png/error.png',
-                                fit: BoxFit.cover,
-                                height: double.infinity,
-                                width: double.infinity,
                                 ),
                               ),
-                            ),
+                              Positioned(
+                                top: 10,
+                                left: 10,
+                                child: CustomIcon(
+                                  size: 30,
+                                  enableColor: Color(0xFFFF0000),
+                                  unEnableColor: Colors.white,
+                                  enableIcon: Icons.favorite,
+                                  unEnableIcon: Icons.favorite_border,
+                                ),
+                              )
+                            ],
                           ),
                         ),
-                        Positioned(
-                          top: 10,
-                          left: 10,
-                          child: CustomIcon(
-                            size: 30,
-                            enableColor: Color(0xFFFF0000),
-                            unEnableColor: Colors.white,
-                            enableIcon: Icons.favorite,
-                            unEnableIcon: Icons.favorite_border,
+                        Padding(
+                          padding: const EdgeInsets.only(top: 8, bottom: 8),
+                          child: ColoredBox(
+                            color: getCategoryColor(article.category),
+                            child: Padding(
+                              padding: const EdgeInsets.only(top: 4, bottom: 4, left: 16, right: 16),
+                            child: Text(article.category, style: titleStyle1,),
+                            )
                           ),
-                        )
+                        ),
+                        Text(article.title, style: nameStyle),
+                        Text(article.content, overflow: TextOverflow.ellipsis, maxLines: 2, style: desStyle1),
                       ],
                     ),
                   ),
-                  Padding(
-                    padding: const EdgeInsets.only(top: 8, bottom: 8),
-                    child: ColoredBox(
-                      color: getCategoryColor(article.category),
-                      child: Padding(
-                        padding: const EdgeInsets.only(top: 4, bottom: 4, left: 16, right: 16),
-                      child: Text(article.category, style: titleStyle1,),
-                      )
-                    ),
-                  ),
-                  Text(article.title, style: nameStyle),
-                  Text(article.content, overflow: TextOverflow.ellipsis, maxLines: 2, style: desStyle1),
-                ],
               ),
             ),
+          ),
     );
   }
 }

@@ -8,4 +8,5 @@ const TextStyle desStyle3 = TextStyle(color: Colors.white, fontSize: 14, fontFam
 
 //detailspage
 const TextStyle titleStyle2 = TextStyle(color: Color(0xFF5A5A5A), fontSize: 22, fontFamily: 'Somar', fontWeight: FontWeight.w200);
-const TextStyle desStyle2 = TextStyle(color: Color(0xFF5A5A5A), fontSize: 18, fontFamily: 'Somar',);
+const TextStyle desStyle2 = TextStyle(color: Color(0xFF5A5A5A), fontSize: 18, fontFamily: 'Somar', );
+const TextStyle desStyle4 = TextStyle(color: Color(0xFF3977AA), fontSize: 18, fontFamily: 'Somar', fontWeight: FontWeight.bold);
